@@ -1,25 +1,65 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useState, useEffect} from "react";
+import {
+  BrowserRouter as Router,
+  Route,
+} from "react-router-dom";
+import firebase from './firebaseConfig'
+
+import ScrollToTop from './ScrollToTop'
+import AboutUs from "./pages/AboutUs"
+import Home from './pages/Home'
+import Jobs from "./pages/Jobs"
+import Careers from "./pages/Careers"
+import Contact from "./pages/Contact"
+import JobDetails from "./pages/JobDetails"
+
+import {user, loggedIn, isVerified} from './recoil/atoms'
+import {useRecoilState} from 'recoil'
+import { VerifiedUser } from "@material-ui/icons";
 
 function App() {
+
+  const auth = firebase.auth()
+  const [userData, setUserData] = useRecoilState(user);
+  const [isLoggedIn, setIsLoggedIn] = useRecoilState(loggedIn)
+  const [verified, setVerified] = useRecoilState(isVerified)
+
+  useEffect(() => {
+    auth.onAuthStateChanged((u) => {
+      if(u) {
+        setIsLoggedIn(true)
+        setUserData(u)
+        console.log(`USER LOGGED IN`)
+        if(u.emailVerified) {
+          setVerified(true)
+        }
+        else {
+          setVerified(false)
+        }
+      }
+      else {
+        setIsLoggedIn(false)
+        setUserData([])
+        console.log('NO USER')
+      }
+    })
+  }, [])
+
+  console.log(userData)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <ScrollToTop />
+      <div className="App">
+        <Route path = "/" exact component={Home} />
+        <Route path="/about-us" component={AboutUs} />
+        <Route path="/jobs" exact component={Jobs} />
+        <Route path="/jobs/:id" component={JobDetails} />
+        <Route path="/careers" component={Careers} />
+        <Route path="/contact" component={Contact} />
+      </div>
+    </Router>
   );
 }
 
-export default App;
+export default(App);
