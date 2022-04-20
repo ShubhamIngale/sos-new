@@ -57,6 +57,7 @@ export const ContactForm = styled.form`
         }
 
         @media (max-width: 767px ) {
-                margin-top: 40px;
+                // margin-top: 40px;
+                padding: 24px;
         }
 `

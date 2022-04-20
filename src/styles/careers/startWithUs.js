@@ -8,7 +8,7 @@ export const SWUDiv = styled.div`
 
         @media (max-width: 767px) {
                 padding-top: 40px;
-                padding-bottom: 350px;
+                // padding-bottom: 350px;
                 background-size: 90%;
 
         }
@@ -40,5 +40,5 @@ export const Title = styled.h2`
 
 export const Para = styled.p`
         margin-bottom: 10px;
-        padding-right: 100px;
+        // padding-right: 100px;
 `;

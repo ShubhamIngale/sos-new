@@ -4,15 +4,14 @@ import ReachingStart from '../../assets/home-page/The-Right-Recruitment-Agency.s
 
 export const RADiv = styled.div`
         padding-top: 86px;
-        padding-bottom: 135px;
+        padding-bottom: 72px;
         // background: url(${ReachingStart}) no-repeat;
         // background-position: right -100px bottom;
 
         @media (max-width: 768px) {
                 padding-top: 40px;
                 padding-bottom: 40px;
-                height: 100vh;
-                // background-position: bottom center
+                // height: 100vh;
         }
 `;
 
@@ -30,7 +29,7 @@ export const Title = styled.h2`
 
 export const Para = styled.p`
         margin-bottom: 32px;
-        padding-right: 160px;
+        padding-right: 90px;
 
         @media (max-width: 768px) {
                 padding-right: 0;

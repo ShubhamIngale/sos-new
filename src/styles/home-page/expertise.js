@@ -9,6 +9,7 @@ export const ExpertiseDiv = styled.div`
         @media (max-width: 768px) {
                 padding-top: 50px;
                 padding-bottom: 50px;
+                margin-top: 120px;
 
         }
 `;
@@ -29,11 +30,20 @@ export const gridItem = {
         padding: '50px',
         display: 'flex',
         alignItems: 'center',
-        // boxShadow: '0px 8px 16px rgba(30, 52, 92, 0.1)'
+}
+
+export const gridItemMobile = {
+        padding: '30px 20px',
+        display: 'flex',
+        alignItems: 'center',
 }
 
 export const GridItemImg = styled.img`
-        margin-right: 22px
+        margin-right: 22px;
+
+        @media (max-width: 768px) {
+                width: 80px;
+        }
 `;
 
 export const GridItemTitle = styled.p`

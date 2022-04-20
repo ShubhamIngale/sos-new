@@ -109,9 +109,9 @@ const Login = (props) => {
                                         <p align="right"><small>Forget password</small></p>
                                 </form>  
                                 <Hr />
-                                <Button onClick={() => googleLogin()} style={googleBtn}><GoogleImg src={googleIcon} width="20px"/> Google Login</Button>
+                                <Button style={googleBtn}><GoogleImg src={googleIcon} width="20px"/> Google Login</Button>
                                 <Hr />
-                                <p>New to CareerBest Consultant? Signup here</p>
+                                <p>New to Switch On Success? Signup here</p>
                         </LoginDiv>
                 </>
         )

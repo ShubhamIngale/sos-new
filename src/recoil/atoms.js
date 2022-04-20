@@ -33,3 +33,11 @@ export const user = atom({
         default: [],
         dangerouslyAllowMutability: true,
 })
+
+
+
+// FORM PANEL 
+export const enrollPanel = atom({
+        key: 'enrollPanel',
+        default: false
+})

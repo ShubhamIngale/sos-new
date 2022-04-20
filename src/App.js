@@ -16,6 +16,8 @@ import JobDetails from "./pages/JobDetails"
 import {user, loggedIn, isVerified} from './recoil/atoms'
 import {useRecoilState} from 'recoil'
 import { VerifiedUser } from "@material-ui/icons";
+import SmartAchivers from "./pages/SmartAchivers";
+import Pgpli from "./pages/Pgpli";
 
 function App() {
 
@@ -57,6 +59,8 @@ function App() {
         <Route path="/jobs/:id" component={JobDetails} />
         <Route path="/careers" component={Careers} />
         <Route path="/contact" component={Contact} />
+        <Route path="/smart-achivers" component={SmartAchivers} />
+        <Route path="/PGPLI" component={Pgpli} />
       </div>
     </Router>
   );

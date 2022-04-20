@@ -2,8 +2,8 @@ import styled from "styled-components";
 import {white, sosBlue, black, yellow, grey} from '../global';
 
 export const LoginDiv = styled.div`
-        position: absolute;
-        top: 0;
+        position: fixed;
+        bottom: 0;
         right: 0;
         background-color: ${white};
         z-index: 1001;
@@ -11,6 +11,10 @@ export const LoginDiv = styled.div`
         width: 45%;
         padding: 40px;
         transition: all .2s ease-in-out;
+
+        @media (max-width: 767px ) {
+               width: 100%
+        }
 `
 
 export const Overlay = styled.div`

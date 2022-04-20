@@ -12,7 +12,7 @@ const Values = () => {
                 },
                 {
                         title: 'Value Differentiator',
-                        description: 'At Careerbest Consultant service, quality is our top priority. We have adopted international practices and methodologies to ensure timely and successful executive search. We utilize the in-depth market knowledge and do comprehensive research in providing the best solution to our customers. We give prime emphasis to R & D that helps in building a cohesive professional group covering a wide spectrum of industrial practices. '
+                        description: 'At Switch On success, quality is our top priority. We have adopted international practices and methodologies to ensure timely and successful executive search. We utilize the in-depth market knowledge and do comprehensive research in providing the best solution to our customers. We give prime emphasis to R & D that helps in building a cohesive professional group covering a wide spectrum of industrial practices. '
                 },
                 {
                         title: 'Our Multifaceted Team',

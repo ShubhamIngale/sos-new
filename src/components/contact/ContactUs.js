@@ -20,24 +20,33 @@ const ContactUs = () => {
                 {
                         img: addressImg,
                         title: 'Address',
-                        d1: 'Second Floor, C-11, Pandav Nagar,',
-                        d2: 'East Delhi, Delhi, 110 092'
+                        d1: '252F Ground Floor, Iskcon Mandir Road,',
+                        d2: 'Sant Nagar ,East of Kailash,',
+                        d3: 'New Delhi -110065 (India)'
                 },
                 {
                         img: emailImg,
                         title: 'Email',
-                        d1: 'jobs@careerbest.in',
-                        d2: '1.careerbest@gmail.com'
+                        d1: 'info@switchonsuccess.in',
+                        d2: 'hr@switchonsuccess.in',
                 },
                 {
                         img: phoneImg,
                         title: 'Phone',
-                        d1: '+91 9560209897',
-                        d2: '+91 8802222296'
+                        d1: '+91 9810693347',
+                        d2: '+91 9999333901'
                 }
         ]
 
         const phoneRegExp = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
+
+        function restrictAlphabets(e) {
+                var x = e.which || e.keycode;
+                if ((x >= 48 && x <= 57))
+                    return true
+                else
+                    return false
+            }
 
         const validationSchema = yup.object({
                 name: yup
@@ -68,7 +77,8 @@ const ContactUs = () => {
                         setLoading(true);
                         axios({
                                 method: 'POST',
-                                url: 'https://sos-client-api.herokuapp.com/send',
+                                url: 'https://careerbest-api.herokuapp.com/send',
+                                // url: 'http://localhost:8080/send',
                                 data: {
                                         name: values.name,
                                         email: values.email,
@@ -103,14 +113,14 @@ const ContactUs = () => {
                                                                      <img src={item.img} alt={item.title} />
                                                                      <div>
                                                                              <p><b>{item.title}:</b></p>
-                                                                             <p>{item.d1}<br/>{item.d2}</p>
+                                                                             <p>{item.d1}<br/>{item.d2}<br/>{item.d3}</p>
                                                                      </div>
                                                              </ItemDiv>
                                                      ))   
                                                 }
                                         </Grid>
                                         <Grid item xs={12} md={6}>
-                                                <ContactForm onSubmit={formik.handleSubmit}>
+                                                <ContactForm onSubmit={formik.handleSubmit} id="ContactForm">
                                                         <TextField
                                                                 fullWidth
                                                                 variant="outlined"
@@ -127,10 +137,11 @@ const ContactUs = () => {
                                                                 fullWidth
                                                                 variant="outlined"
                                                                 size="small"
-                                                                type="number"
+                                                                type="tel"
                                                                 id="phone"
                                                                 name="phone"
                                                                 label="Phone"
+                                                                inputProps={{ maxLength: 10, onKeyPress: (e) => {restrictAlphabets(e)} }}
                                                                 value={formik.values.phone}
                                                                 onChange={formik.handleChange}
                                                                 error={formik.touched.phone && Boolean(formik.errors.phone)}

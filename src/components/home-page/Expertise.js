@@ -1,6 +1,6 @@
 import React from 'react'
 import {Container, Grid, Paper} from '@material-ui/core'
-import {ExpertiseDiv, Title, gridItem, GridItemImg, GridItemTitle, GridItemPara} from '../../styles/home-page/expertise'
+import {ExpertiseDiv, Title, gridItem, GridItemImg, GridItemTitle, GridItemPara, gridItemMobile} from '../../styles/home-page/expertise'
 
 
 import insurance from '../../assets/home-page/Industries/Insurance.svg'
@@ -17,10 +17,10 @@ const Expertise = () => {
         return (
           <ExpertiseDiv>
             <Container>
-              <Title>Industries We Serve</Title>
+              <Title>Area of Expertise</Title>
               <Grid container spacing={5}>
                 <Grid item xs={12} md={6}>
-                  <Paper elevation={0} style={gridItem}>
+                  <Paper elevation={0} style={(window.innerWidth > 768) ? gridItem : gridItemMobile}>
                     <GridItemImg src={insurance} alt="insurance" />
                     <div>
                       <GridItemTitle>Insurance</GridItemTitle>
@@ -32,7 +32,7 @@ const Expertise = () => {
                   </Paper>
                 </Grid>
                 <Grid item xs={12} md={6}>
-                  <Paper elevation={0} style={gridItem}>
+                  <Paper elevation={0} style={(window.innerWidth > 768) ? gridItem : gridItemMobile}>
                     <GridItemImg src={technology} alt="technology" />
                     <div>
                       <GridItemTitle>Technology</GridItemTitle>
@@ -44,7 +44,7 @@ const Expertise = () => {
                   </Paper>
                 </Grid>
                 <Grid item xs={12} md={6}>
-                  <Paper elevation={0} style={gridItem}>
+                  <Paper elevation={0} style={(window.innerWidth > 768) ? gridItem : gridItemMobile}>
                     <GridItemImg src={accounting} alt="accounting" />
                     <div>
                       <GridItemTitle>Accounting</GridItemTitle>
@@ -55,7 +55,7 @@ const Expertise = () => {
                   </Paper>
                 </Grid>
                 <Grid item xs={12} md={6}>
-                  <Paper elevation={0} style={gridItem}>
+                  <Paper elevation={0} style={(window.innerWidth > 768) ? gridItem : gridItemMobile}>
                     <GridItemImg src={globalSourcing} alt="global sourcing" />
                     <div>
                         <GridItemTitle>Global Sourcing</GridItemTitle>
@@ -66,7 +66,7 @@ const Expertise = () => {
                   </Paper>
                 </Grid>
                 <Grid item xs={12} md={6}>
-                  <Paper elevation={0} style={gridItem}>
+                  <Paper elevation={0} style={(window.innerWidth > 768) ? gridItem : gridItemMobile}>
                     <GridItemImg src={banking} alt="banking" />
                     <div>
                         <GridItemTitle>Banking</GridItemTitle>
@@ -77,7 +77,7 @@ const Expertise = () => {
                   </Paper>
                 </Grid>
                 <Grid item xs={12} md={6}>
-                  <Paper elevation={0} style={gridItem}>
+                  <Paper elevation={0} style={(window.innerWidth > 768) ? gridItem : gridItemMobile}>
                     <GridItemImg src={hr} alt="Hr" />
                     <div>
                         <GridItemTitle>HR, Marketing & Sales</GridItemTitle>
@@ -88,7 +88,7 @@ const Expertise = () => {
                   </Paper>
                 </Grid>
                 <Grid item xs={12} md={6}>
-                  <Paper elevation={0} style={gridItem}>
+                  <Paper elevation={0} style={(window.innerWidth > 768) ? gridItem : gridItemMobile}>
                     <GridItemImg
                       src={financialServices}
                       alt="financial services"
@@ -102,7 +102,7 @@ const Expertise = () => {
                   </Paper>
                 </Grid>
                 <Grid item xs={12} md={6}>
-                  <Paper elevation={0} style={gridItem}>
+                  <Paper elevation={0} style={(window.innerWidth > 768) ? gridItem : gridItemMobile}>
                     <GridItemImg
                       src={administration}
                       alt="administration and operations"

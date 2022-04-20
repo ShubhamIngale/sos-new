@@ -13,6 +13,12 @@ export const BSDiv = styled.div`
 `;
 
 export const gridPaper = {
+        padding: '190px 22px 40px 22px',
+        minHeight: '379px',
+        color: yellow
+}
+
+export const gridPaperMobile = {
         padding: '40px 22px',
         minHeight: '379px',
         color: yellow,
@@ -33,9 +39,18 @@ export const MainTitle = styled.h2`
 `;
 
 export const Title = styled.h2`
-        margin-top: 13px;
+        margin-bottom: 13px;
         font-weight: bold;
         font-size: 28px;
         line-height: 120%;
         color: ${white}
+`;
+
+export const Desc = styled.p`
+         margin-top: 10px;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 150%;
+        letter-spacing: 0.04em;
+        color: ${white};
 `;

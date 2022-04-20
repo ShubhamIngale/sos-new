@@ -43,6 +43,13 @@ export const LinkUlList = styled.li`
         color: ${white}
 `;
 
+export const dropdownList = {
+        fontWeight: 'normal',
+        fontSize: 14,
+        lineHeight: '140%',
+        color: `${black}`
+}
+
 export const LinkButton = {
         marginTop: 0,
         color: `${white}`,
@@ -69,4 +76,5 @@ export const MobileList = styled.li`
         text-align: left;
         margin: 24px 10px;
         font-size: 24px;
+        transition: height .3s ease-in-out;
 `;

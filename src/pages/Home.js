@@ -6,6 +6,8 @@ import Expertise from '../components/home-page/Expertise'
 import RightAgency from '../components/home-page/RightAgency'
 import Footer from "../components/Footer";
 import Header from "../components/Header";
+import SolutionsTwo from '../components/home-page/SolutionsTwo'
+import Programs from '../components/home-page/Programs'
 
 const Home = () => {
         return (
@@ -14,8 +16,10 @@ const Home = () => {
                        <Banner />
                        <BusinessSolutions />
                        <RightAgency />
+                       <SolutionsTwo />
                        <Expertise />
-                       <BuildYourDreamTeam p="home" />
+                       <Programs />
+                       <BuildYourDreamTeam page="home" />
                        <Footer />
                 </>
         )

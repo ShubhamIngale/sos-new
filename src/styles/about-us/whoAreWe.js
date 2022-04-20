@@ -37,7 +37,7 @@ export const LastPara = styled.p`
         padding-right: 48px;
 
         @media (max-width: 767px) {
-                margin-top: 34vh;
+                // margin-top: 34vh;
                 padding-right: 0;
         }     
 `;

@@ -6,7 +6,7 @@ export const VDiv = styled.div`
 
         @media (max-width: 767px) {
                 background-size: 90%;
-                padding-top: 450px;
+                padding-top: 40px;
                 padding-bottom: 40px;
         }
 `

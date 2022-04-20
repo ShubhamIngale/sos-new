@@ -1,6 +1,6 @@
 import React from 'react'
 import {Container, Grid, Button} from '@material-ui/core'
-import {BYDTDiv, BgOverlay, Title, BgOverlayMobile, TitleMobile} from '../../styles/home-page/banner'
+import {BYDTDiv, BgOverlay, Title, TitleMobile} from '../../styles/home-page/banner'
 import {white, sosBlue, orange} from '../../styles/global';
 import { Link } from 'react-router-dom';
 
@@ -13,6 +13,7 @@ const Banner = () => {
         return (
           <>
             <BYDTDiv>
+              <BgOverlay></BgOverlay>
               <Container style={{ height: "100%" }}>
                 <Grid container spacing={2} style={{ height: "100%" }}>
                   <Grid item xs={12} md={6}>
@@ -38,6 +39,9 @@ const Banner = () => {
                       Find a Job
                     </Button>
                     </Link>
+                    {
+                      window.innerWidth < 768 && <div style={{marginBottom: 16}}></div>
+                    }
                     <Button
                       style={{ background: `${sosBlue}`, color: `${white}` }}
                       onClick={() => hireTalent()}
@@ -48,7 +52,7 @@ const Banner = () => {
                 </Grid>
               </Container>
             </BYDTDiv>
-            <div
+            {/* <div
               style={{
                 background: `${orange}`,
                 color: `${white}`,
@@ -75,14 +79,14 @@ const Banner = () => {
                         }
                       }
                     >
-                      We at Careerbest with the help of industry alliance will
+                      We at Switch On Success with the help of industry alliance will
                       make a vital contribution to helping people return safely
                       and enabling companies adapt to the new normal.
                     </p>
                   </Grid>
                 </Grid>
               </Container>
-            </div>
+            </div> */}
           </>
         );
 }
