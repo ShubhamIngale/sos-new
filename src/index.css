@@ -45,8 +45,14 @@ a {
   /* transform: scale(.8); */
 }
 
+
 .headerLink {
   color: #FFFFFF;
+}
+@media screen and (max-width: 767px) {
+  .headerLink {
+    color: #241C15
+  }
 }
 
 ul {
@@ -83,4 +89,32 @@ button {
   br {
     display: none
   }
+}
+
+
+#programs-menu .MuiPaper-root {
+  top: 55px !important;
+  overflow: visible;
+}
+#programs-menu .MuiPaper-root::before {
+  content: '';
+  position: absolute;
+  height: 10px;
+  width: 10px;
+  background: white;
+  left: 15px;
+  top: -5px;
+  transform: rotate(45deg)
+}
+
+#programs-menu-mobile .MuiPaper-root {
+  left: 140px !important;
+}
+
+
+
+/* contact form eror styling */
+#ContactForm .MuiFormHelperText-root.Mui-error {
+  margin-top: -24px;
+  margin-bottom: 24px;
 }

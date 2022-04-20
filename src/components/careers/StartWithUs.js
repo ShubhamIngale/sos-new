@@ -18,7 +18,7 @@ const StartWithUs = () => {
                   </MainPara>
                   <Title>Personal touch starts with us</Title>
                   <Para>
-                    We at careerbest consultants believe fulfilment doesn't come
+                    We at switch on success consultants believe fulfilment doesn't come
                     from clearing hurdles that others set for you, but it comes
                     from clearing those you set for yourself. We help you
                     examine the question, “Am I reaching my potential?”
@@ -31,7 +31,7 @@ const StartWithUs = () => {
                   </Para>
                 </Grid>
                 <Grid item xs={12} md={6}>
-                  <img src={startWithUs} alt="start with us" />
+                  <img src={startWithUs} alt="start with us" width= {window.innerWidth < 768 ? "100%" : 'auto'} />
                 </Grid>
               </Grid>
             </Container>

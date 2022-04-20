@@ -12,7 +12,7 @@ const Careers = () => {
                      <HeaderWhite active="careers" />   
                      <CBanner page = 'careers' />
                      <StartWithUs />
-                     <Promise />
+                     <Promise page={'careers'} />
                      <Values />
                      <Footer />
                 </>

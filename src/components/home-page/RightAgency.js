@@ -12,16 +12,16 @@ const RightAgency = () => {
             <Container>
               <Grid container spacing={1}>
                 <Grid item xs={12} md={6}>
-                    <img src={agency} alt="The Right Recruitment Agency"/>
+                    <img src={agency} alt="The Right Recruitment Agency" width= {window.innerWidth < 768 ? "100%" : 'auto'}/>
                 </Grid>
                 <Grid item xs={12} md={6}>
-                  <Paper elevation={0} style={{backgroundColor: 'transparent', display: 'flex', flexDirection: 'column', justifyContent: 'center', height: '100%'}}>
+                  <Paper elevation={0} style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', height: '100%'}}>
                     <Title>
                       The Right Recruitment Agency For You in BFSI Industry
                     </Title>
                     <Para>
                       Finding and hiring skilled talent is more significant than
-                      ever before. Careerbest Consultant has the tools to
+                      ever before. Switch On Success has the tools to
                       connect companies with the best recruiters, as well as
                       connecting applicants with the right jobs.
                     </Para>

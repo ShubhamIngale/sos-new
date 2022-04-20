@@ -10,6 +10,10 @@ export const BYDTDiv = styled.div`
         background-repeat: no-repeat;
         height: 480px;
         overflow: hidden;
+
+        @media (max-width: 768px) {
+                background-position: left -300px center;
+        }
 `;
 
 export const AboutCtaDiv = styled.div`
@@ -49,6 +53,6 @@ export const Title = styled.h2`
         @media (max-width: 768px) {
                 margin-top: 160px;
                 font-size: 40px;
-                padding-right: 50px;
+                // padding-right: 50px;
         }
 `;

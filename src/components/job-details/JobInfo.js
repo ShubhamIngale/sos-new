@@ -68,13 +68,13 @@ const JobInfo = (props) => {
                                                                         <InfoListItem><AccessTimeIcon fontSize="small" /> {jobInfo.division}</InfoListItem>
                                                                         <InfoListItem><LocationOnOutlinedIcon fontSize="small" /> {jobInfo.state} - {jobInfo.zone}</InfoListItem>
                                                                 </InfoList>
-                                                                <ButtonDiv>
+                                                                {/* <ButtonDiv>
                                                                         {
                                                                                 isLoggedIn ?
                                                                                         <Button style={{backgroundColor: `${sosBlue}`, color: `${white}`}} onClick={() => applyJob()}>Apply</Button> :
-                                                                                        <Button style={{backgroundColor: `${sosBlue}`, color: `${white}`}} onClick={() => togglePanel()}>Login to Apply</Button>
+                                                                                        <Button style={{backgroundColor: `${sosBlue}`, color: `${white}`}}>Login to Apply</Button>
                                                                         }
-                                                                </ButtonDiv>
+                                                                </ButtonDiv> */}
                                                                 <Hr />
                                                                 <div>
                                                                         <InfoList>

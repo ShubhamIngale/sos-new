@@ -1,19 +1,22 @@
 import React, {useState} from 'react'
 import { Link } from 'react-router-dom'
-import {Container, Grid, Button} from '@material-ui/core'
+import {Container, Grid, Button, Menu, MenuItem} from '@material-ui/core'
 import {black} from '../styles/global'
 import MenuIcon from '@material-ui/icons/Menu';
 import CloseIcon from '@material-ui/icons/Close';
 import logo from '../assets/logo/logo.svg'
-import {HeaderDivWhite, LinkButton, LinkUl, LinkUlList, MobileDiv, MobileList} from '../styles/header'
+import {HeaderDivWhite, LinkButton, LinkUl, LinkUlList, MobileDiv, MobileList, dropdownList} from '../styles/header'
 import twitterIcon from '../assets/global/Twitter.svg'
 import facebookIcon from '../assets/global/Facebook.svg'
 import linkedinIcon from '../assets/global/LinkedIn.svg'
 import instaIcon from '../assets/global/Instagram.svg'
+import {lightBlue} from '../styles/global'
 
 const HeaderWhite = ({active}) => {
 
         const [menuOpen, setMenuOpen] = useState(false);
+        const [anchorEl, setAnchorEl] = useState(null)
+        const [isDropdownOpen, setIsDropdownOpen] = useState(false)
 
         const handleScroll = () => {
                 if (window.scrollY > 100) {
@@ -36,13 +39,21 @@ const HeaderWhite = ({active}) => {
                 window.open(link, '_blank')
               }
 
+        const handleClick = (event) => {
+                setAnchorEl(event.currentTarget);
+        };
+        
+        const handleClose = () => {
+                setAnchorEl(null);
+        };
+
         return (
                 <HeaderDivWhite className="navbar" page={active}>
                         <Container>
                                 <Grid container spacing={2}>
-                                        <Grid item xs={6} md={3}>
+                                        <Grid item xs={6} md={3} style={{display: 'flex', alignItems: 'center'}}>
                                                 <Link to='/'>
-                                                        <img src={logo} width="150px" alt="careerbest consultant" />
+                                                        <img src={logo} alt="careerbest consultant" />
                                                 </Link>
                                         </Grid>
 
@@ -51,17 +62,34 @@ const HeaderWhite = ({active}) => {
                                                         <Grid item xs={6} md={9}>
                                                                 <LinkUl>
                                                                         <LinkUlList><Link to='/jobs' className={active === "jobs" ? "headerLink active" : "headerLink"} style={{color: `${black}`}}>Job seekers</Link></LinkUlList>
+                                                                        <LinkUlList><Link to='#' onClick={handleClick} aria-haspopup="true" className="headerLink"  style={{color: `${black}`}}>Programs</Link></LinkUlList>
+                                                                        <Menu
+                                                                                id="programs-menu"
+                                                                                anchorEl={anchorEl}
+                                                                                keepMounted
+                                                                                open={Boolean(anchorEl)}
+                                                                                onClose={handleClose}
+                                                                                elevation={0}
+                                                                        >
+                                                                                <MenuItem onClick={handleClose}>
+                                                                                        <Link to='/smart-achivers' style={{...dropdownList}}>Smart Achivers</Link>
+                                                                                </MenuItem>
+                                                                                <MenuItem onClick={handleClose}>
+                                                                                        <Link to='/PGPLI' style={{...dropdownList}}>PGPLI</Link>
+                                                                                </MenuItem>
+                                                                        </Menu>
                                                                         <LinkUlList><Link to='' onClick={() => employerForm()} className={active === "employers" ? "headerLink active" : "headerLink"} style={{color: `${black}`}}>Employers</Link></LinkUlList>
                                                                         <LinkUlList><Link to='/about-us' className={active === "about-us" ? "headerLink active" : "headerLink"} style={{color: `${black}`}}>About us</Link></LinkUlList>
                                                                         <LinkUlList><Link to='/careers' className={active === "careers" ? "headerLink active" : "headerLink"} style={{color: `${black}`}}>Join our team</Link></LinkUlList>
                                                                         <LinkUlList><Link to='/contact' className={active === "contact" ? "headerLink active" : "headerLink"} style={{color: `${black}`}}>Contact us</Link></LinkUlList>
                                                                         <LinkUlList>
-                                                                        {
+                                                                        {/* {
                                                                                 (active === 'jobs') ? 
                                                                                 <Link to="#"><Button style={LinkButton}>Login</Button></Link> :
                                                                                 <Link to="/jobs"><Button style={LinkButton}>Find a job</Button></Link>
-                                                                        }
+                                                                        } */}
                                                                         </LinkUlList>
+                                                                        <Link to="/jobs"><Button style={LinkButton}>Find a job</Button></Link>
                                                                 </LinkUl>
                                                         </Grid>
                                                 ) : 
@@ -88,6 +116,32 @@ const HeaderWhite = ({active}) => {
                                                         </Grid>
                                                         <ul style={{marginTop: 54}}>
                                                                 <MobileList><Link to='/jobs' className={active === "jobs" ? "headerLink active" : "headerLink"}>Job seekers</Link></MobileList>
+                                                                <MobileList><Link to='#' onClick={() => setIsDropdownOpen(!isDropdownOpen)} aria-haspopup="true" className="headerLink">Programs</Link></MobileList>
+                                                                <MobileList style={isDropdownOpen ? {background: `${lightBlue}`, marginTop: -20, padding: '0 15px', height: '70px', overflow: 'hidden' } : {background: `${lightBlue}`, marginTop: -20, padding: '0 15px', height: 0, overflow: 'hidden'}}>
+                                                                        <ul>
+                                                                                <li>
+                                                                                        <Link to='/smart-achivers' style={{...dropdownList}}>Smart Achivers</Link>
+                                                                                </li>
+                                                                                <li>
+                                                                                        <Link to='/PGPLI' style={{...dropdownList}}>PGPLI</Link>
+                                                                                </li>
+                                                                        </ul>
+                                                                </MobileList>
+                                                                {/* <MobileList><Link to='#' onClick={handleClick} aria-haspopup="true" className="headerLink">Programs</Link></MobileList>
+                                                                <Menu
+                                                                        id="programs-menu-mobile"
+                                                                        anchorEl={anchorEl}
+                                                                        keepMounted
+                                                                        open={Boolean(anchorEl)}
+                                                                        onClose={handleClose}
+                                                                >
+                                                                        <MenuItem onClick={handleClose}>
+                                                                                <Link to='/smart-achivers' style={{...dropdownList}}>Smart Achivers</Link>
+                                                                        </MenuItem>
+                                                                        <MenuItem onClick={handleClose}>
+                                                                                <Link to='/PGPLI' style={{...dropdownList}}>PGPLI</Link>
+                                                                        </MenuItem>
+                                                                </Menu> */}
                                                                 <MobileList><Link to='' onClick={() => employerForm()} className={active === "employers" ? "headerLink active" : "headerLink"}>Employers</Link></MobileList>
                                                                 <MobileList><Link to='/about-us' className={active === "about-us" ? "headerLink active" : "headerLink"}>About us</Link></MobileList>
                                                                 <MobileList><Link to='/careers' className={active === "careers" ? "headerLink active" : "headerLink"}>Join our team</Link></MobileList>
@@ -103,13 +157,13 @@ const HeaderWhite = ({active}) => {
 
                                                         <Grid container spacing={0} style={{width: '50%', position: 'absolute', bottom: 15, left: '51.5%', transform:'translateX(-50%)'}}>
                                                                 <Grid item xs="3">
-                                                                        <a href="https://www.linkedin.com/company/careerbest-consultant/" target="_blank"><img src={linkedinIcon} width='32px' style={{marginRight: 8}} /></a>
+                                                                        <a href="#"><img src={linkedinIcon} width='32px' style={{marginRight: 8}} /></a>
                                                                 </Grid>
                                                                 <Grid item xs="3">
-                                                                        <a href="https://www.facebook.com/CareerbestConsultant" target="_blank"><img src={facebookIcon} width='32px' style={{marginRight: 8}} /></a>
+                                                                        <a href="#"><img src={facebookIcon} width='32px' style={{marginRight: 8}} /></a>
                                                                 </Grid>
                                                                 <Grid item xs="3">
-                                                                        <a href="https://www.instagram.com/careerbest.consultant/" target="_blank"><img src={instaIcon} width='32px' style={{marginRight: 8}} /></a>
+                                                                        <a href="#"><img src={instaIcon} width='32px' style={{marginRight: 8}} /></a>
                                                                 </Grid>
                                                                 <Grid item xs="3">
                                                                         <a href="#"><img src={twitterIcon} width='32px' /></a>     

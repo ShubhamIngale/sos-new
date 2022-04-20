@@ -6,16 +6,18 @@ import WhyChooseUs from '../components/about-us/WhyChooseUs'
 import Vision from '../components/about-us/Vision'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
+import Process from '../components/about-us/Process'
 
 const AboutUs = () =>  {
         return (
                 <>
                         <Header active="about-us" />
                         <Banner />
-                        <WhoAreWe />
+                        <WhoAreWe page={'about us'} />
                         <Vision />
                         <WhyChooseUs />
-                        <BuildYourDreamTeam />
+                        <Process />
+                        <BuildYourDreamTeam page="about us" />
                         <Footer />
                 </>
         )

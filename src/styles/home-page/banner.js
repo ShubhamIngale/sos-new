@@ -10,31 +10,17 @@ export const BYDTDiv = styled.div`
         background-repeat: no-repeat;
         overflow: hidden;
         height: 680px;
+
+        @media(max-width: 768px) {
+                background-position: right -300px center;
+        }
 `;
 
 export const BgOverlay = styled.div`
         position: absolute;
-        top: 124px;
-        left:-84px;
+        background: linear-gradient(180deg, rgba(0,0,0,0.8281687675070029) 11%, rgba(0,212,255,0) 100%);
         height: 100%;
-        width: 50%;
-        background: url(${yellowOverlay});
-        background-size: cover;
-        background-repear: no-repeat;
-        z-index: 0;
-`;
-
-export const BgOverlayMobile = styled.div`
-        position: absolute;
-        top: -160px;
-        left:0px;
-        height: 100%;
-        width: 105vw;
-        background: url(${yellowOverlay});
-        background-size: cover;
-        background-repear: no-repeat;
-        z-index: 0;
-        transform: scaleX(-1);
+        width: 100%;
 `;
 
 export const Title = styled.h2`
@@ -51,6 +37,7 @@ export const Title = styled.h2`
 export const TitleMobile = styled.h2`
         margin-top: 108px;
         margin-bottom: 20px;
+        color: ${white};
         position: relative;
         font-weight: bold;
         font-size: 40px;
